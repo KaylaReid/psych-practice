@@ -75,3 +75,36 @@ function addCast(){
 }
 addCast();
 
+function addRandomGusName() {
+    let gusButton = document.querySelector(".gus-button");
+    let gusCard = document.querySelector(".gus-card");
+    gusCard.removeChild(gusButton);
+    let min = Math.ceil(0);
+    let max = Math.floor(136);
+    let index = Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
+    gusCard.innerHTML +=
+    `<p>${data.gusNames[index]}</p>
+    <button class="gus-button">Get Name!</button>`
+    gusButton = document.querySelector(".gus-button");
+    gusButton.addEventListener("click", addRandomGusName)
+}
+function addGusNames(){
+    mainContent.innerHTML +=
+    `<div class="gus-container">
+    <h2>Get a Gus Name!</h2>
+    <div class="gus-card"></div>
+    </div>`
+    let gusCard = document.querySelector(".gus-card");
+    gusCard.innerHTML +=
+    `<button class="gus-button">Get Name!</button>`
+    const gusButton = document.querySelector(".gus-button");
+    gusButton.addEventListener("click", addRandomGusName);
+}
+addGusNames();
+
+console.log("gus total", data.gusNames.length);
+
+
+
+
+
