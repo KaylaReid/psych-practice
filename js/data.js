@@ -34,7 +34,7 @@ const psychData = {
         },
         {
             name: "Karen Vick",
-            job: "Psychic Detective",
+            job: "Chief of Police",
             bio: "Karen C. Vick (née Dunlap) is a character on the American comedy detective drama Psych played by Kirsten Nelson. According to Head Detective Carlton Lassiter's weblog, Vick replaced Police Chief John Fenich upon his retirement about a month prior to Shawn's arrival at the SBPD in the pilot episode. Vick's relationship with Lassiter seems strained by the fact that she is 'an outsider' who was chosen by 'the powers that be in City Hall' to take the position over 'someone from within our own ranks.' Vick's decision to allow a self-proclaimed psychic so far into official police investigations has done little to assuage Lassiter's misgivings. Eventually, Lassiter's attitude towards both Shawn and Vick soothed.",
             image: "../images/karenvick.jpg"
         }
@@ -68,7 +68,7 @@ const psychData = {
             name: "Corbin Bernsen",
             birth: "September 7, 1954",
             bio: "Corbin Dean Bernsen is an American actor and director, known for his work on television. He is known for his roles as divorce attorney Arnold Becker on the NBC drama series L.A. Law, as Dr. Alan Feinstone in The Dentist, as retired police detective Henry Spencer on the USA Network comedy-drama series Psych, and as Roger Dorn in the films Major League, Major League II, and Major League: Back to the Minors. He has also appeared regularly on other shows, including General Hospital and Cuts.",
-            image: "../images/timothy.jpg",
+            image: "../images/corbin.jpg",
         },
         {
             name: "Kristen Nelson",
@@ -82,24 +82,28 @@ const psychData = {
     ],
     favEps: [
         {
+            image: "../images/hp.jpg",
             title: "Lock, Stock, Some Smoking Barrels and Burton Guster's Goblet of Fire",
             airdate: "January 8, 2014",
             description: "Despereaux summons Shawn to London to help with a sting operation; Gus accompanies Shawn, but would rather attend a Harry Potter convention.",
             why: "Psych and HP?! How could life get any better!"
         },
         {
+            image: "../images/cat.jpg",
             title: "9 Lives",
             airdate: "August 4, 2006",
-            description: "",
-            why: "Psych and cats it's a no brainer!"
+            description: "Shawn believes an apparent suicide is really a murder, and he keeps himself on the case by pretending the victim's cat is giving him information.",
+            why: "Psych and cats, nuff said!!"
         },
         {
+            image: "../images/despereaux.jpg",
             title: "Pierre Despereaux",
             airdate: "July 7, 2006 - March 2, 2007",
             description: "If Mr. Yang is Psych’s most memorable villain, Pierre Despereaux is easily Psych’s most memorable recurring character. The unbearingly debonair Cary Elwes was a brilliant choice to portray this maybe art thief, maybe Interpol agent, consistently oozing braggadocio and spewing out 007-esque musings like he was trying to meet a quota. (“You see, a gentleman of leisure never packs his weapon next to his socks. It’s uncouth.”) Whether or not he was really undercover for the British government is up to you, but his lovingly familial relationship with Shawn — and openly mutual disdain with Gus — was a hoot to see slowly unfold.",
-            why: "He's in 4 episodes and they are all amazing, It's inpossibe to choose just one!"
+            why: " Despereaux is in 4 episodes and they are all amazing, It's inpossibe to choose just one!"
         },
         {
+            image: "../images/finale.jpg",
             title: "The Break-Up",
             airdate: "March 26, 2014",
             description: "Shawn and Gus work with Lassiter, Henry and Woody to solve the murder of a real estate executive; Shawn must make a life decision.",
@@ -141,4 +145,4 @@ function setData(nameTag, jsObject){
     let stringifiedObject = JSON.stringify(jsObject);
     localStorage.setItem(nameTag, stringifiedObject);
 }
-setData("Psych Data", psychData);
+setData("PsychData", psychData);

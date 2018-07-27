@@ -3,7 +3,7 @@ function loadData(nameTag){
     let parsedObject = JSON.parse(stringifiedObject);
     return parsedObject;
 }
-const data = loadData("Psych Data");
+const data = loadData("PsychData");
 
 console.log("I grabbed psych data", data);
 
@@ -13,6 +13,14 @@ const mainDiv = document.createElement("div");
 mainDiv.setAttribute("class", "wrapper");
 body.insertBefore(mainDiv, script);
 const wrapper = document.querySelector(".wrapper");
+
+document.querySelector(".wrapper").addEventListener("click", function (event){
+    console.log("target", event.target);
+    console.log("currentTarget", event.currentTarget);
+    if(event.target.className === "gus-button"){
+        addRandomGusName();
+    }
+});
 
 function startHTML(){
     wrapper.innerHTML +=
@@ -75,6 +83,7 @@ function addCast(){
 }
 addCast();
 
+// this one does the cool shit
 function addRandomGusName() {
     let gusButton = document.querySelector(".gus-button");
     let gusCard = document.querySelector(".gus-card");
@@ -84,10 +93,10 @@ function addRandomGusName() {
     let index = Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
     gusCard.innerHTML +=
     `<p>${data.gusNames[index]}</p>
-    <button class="gus-button">Get Name!</button>`
-    gusButton = document.querySelector(".gus-button");
-    gusButton.addEventListener("click", addRandomGusName)
+    <button class="gus-button">Get Another Name!</button>`
+
 }
+// this function makes and prints the button 
 function addGusNames(){
     mainContent.innerHTML +=
     `<div class="gus-container">
@@ -97,14 +106,32 @@ function addGusNames(){
     let gusCard = document.querySelector(".gus-card");
     gusCard.innerHTML +=
     `<button class="gus-button">Get Name!</button>`
-    const gusButton = document.querySelector(".gus-button");
-    gusButton.addEventListener("click", addRandomGusName);
 }
 addGusNames();
 
-console.log("gus total", data.gusNames.length);
 
+// console.log("gus total", data.gusNames.length); //commented out cause it was clever
 
-
-
-
+function addEps(){
+    mainContent.innerHTML +=
+    `<div class="episode-container">
+        <h2>Just a few of the best episodes</h2>
+        <div class="episode-card-container"></div>
+    </div>`
+    const epCardContainer = document.querySelector(".episode-card-container");
+    data.favEps.forEach(index => {
+    epCardContainer.innerHTML +=
+    `<div class="ep-card">
+        <div>
+            <img src="${index.image}" alt="${index.name}">
+        </div>
+        <div>
+            <h3>${index.title}</h3>
+            <h4>${index.airdate}</h4>
+            <p>${index.description}</p>
+            <p><b>A note about the episode from me:</b> ${index.why}</p>
+        </div>
+    </div>`
+    });
+}
+addEps();
