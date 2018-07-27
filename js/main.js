@@ -51,3 +51,27 @@ function addChars(){
     });
 }
 addChars();
+
+function addCast(){
+    mainContent.innerHTML += 
+    `<div class="cast-container">
+        <h2>Cast</h2>
+        <div class="cast-card-container"></div>
+    </div>`
+    const cardDiv = document.querySelector(".cast-card-container");
+    data.cast.forEach(index => {
+        cardDiv.innerHTML += 
+        `<div class="cast-card">
+            <div>
+                <h3>${index.name}</h3>
+                <h4>${index.birth}</h4>
+                <p>${index.bio}</p>
+            </div>
+            <div>
+                <img src="${index.image}" alt="${index.name}">
+            </div>
+        </div>`
+    });
+}
+addCast();
+

@@ -9,3 +9,14 @@
     padding: .5em;
     background-color: lightgrey;
 }
+.cast-card-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+.cast-card {
+    display: flex;
+    width: 45%;
+    margin: 1em;
+    padding: .5em;
+    background-color: lightcoral;
+}
