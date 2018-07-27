@@ -1,0 +1,11 @@
+.char-card-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+.char-card {
+    display: flex;
+    width: 45%;
+    margin: 1em;
+    padding: .5em;
+    background-color: lightgrey;
+}

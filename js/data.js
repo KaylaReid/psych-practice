@@ -1,7 +1,7 @@
 console.log("Dope");
 
 const psychData = {
-    charactors: [
+    characters: [
         {
             name: "Shawn Spencer",
             job: "Psychic Detective",
@@ -136,3 +136,9 @@ const psychData = {
         }
     ]
 }
+
+function setData(nameTag, jsObject){
+    let stringifiedObject = JSON.stringify(jsObject);
+    localStorage.setItem(nameTag, stringifiedObject);
+}
+setData("Psych Data", psychData);
