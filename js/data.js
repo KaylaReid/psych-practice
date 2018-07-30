@@ -125,7 +125,7 @@ const psychData = {
             images: [
                 "../images/blueberry1.jpg",
                 "../images/blueberry2.jpg",
-                "bb.jpg"
+                "../images/bb.jpg"
             ],
             details: "The Blueberry is the main ride of the psych team during the series! Owned by Gus, the Blueberry is a hilarious character in and of itself, as its a tiny blue efficiency vehicle and often thrown perilously into chase scenes and getaway pursuits. The Blueberry sustained heavy damage often, and always kept hilariously kicking!"
         },

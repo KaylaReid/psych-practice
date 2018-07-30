@@ -44,16 +44,16 @@ function addChars(){
         <div class="char-card-container"></div>
     </div>`
     const cardDiv = document.querySelector(".char-card-container");
-    data.characters.forEach(index => {
+    data.characters.forEach(item => {
         cardDiv.innerHTML += 
         `<div class="char-card">
             <div>
-                <img src="${index.image}" alt="${index.name}">
+                <img src="${item.image}" alt="${item.name}">
             </div>
             <div>
-                <h3>${index.name}</h3>
-                <h4>${index.job}</h4>
-                <p>${index.bio}</p>
+                <h3>${item.name}</h3>
+                <h4>${item.job}</h4>
+                <p>${item.bio}</p>
             </div>
         </div>`
     });
@@ -67,16 +67,16 @@ function addCast(){
         <div class="cast-card-container"></div>
     </div>`
     const cardDiv = document.querySelector(".cast-card-container");
-    data.cast.forEach(index => {
+    data.cast.forEach(item => {
         cardDiv.innerHTML += 
         `<div class="cast-card">
             <div>
-                <h3>${index.name}</h3>
-                <h4>${index.birth}</h4>
-                <p>${index.bio}</p>
+                <h3>${item.name}</h3>
+                <h4>${item.birth}</h4>
+                <p>${item.bio}</p>
             </div>
             <div>
-                <img src="${index.image}" alt="${index.name}">
+                <img src="${item.image}" alt="${item.name}">
             </div>
         </div>`
     });
@@ -119,19 +119,53 @@ function addEps(){
         <div class="episode-card-container"></div>
     </div>`
     const epCardContainer = document.querySelector(".episode-card-container");
-    data.favEps.forEach(index => {
+    data.favEps.forEach(item => {
     epCardContainer.innerHTML +=
     `<div class="ep-card">
         <div>
-            <img src="${index.image}" alt="${index.name}">
+            <img src="${item.image}" alt="${item.name}">
         </div>
         <div>
-            <h3>${index.title}</h3>
-            <h4>${index.airdate}</h4>
-            <p>${index.description}</p>
-            <p><b>A note about the episode from me:</b> ${index.why}</p>
+            <h3>${item.title}</h3>
+            <h4>${item.airdate}</h4>
+            <p>${item.description}</p>
+            <p><b>A note about the episode from me:</b> ${item.why}</p>
         </div>
     </div>`
     });
 }
 addEps();
+
+function themeImage (){
+    const imageDiv = document.querySelector(".theme-image");
+    for (let i = 0; i < data.showThemes.length; i++) {
+         data.showThemes[i].images.forEach(item =>{
+            imageDiv.innerHTML +=
+            `<img src="${item}">`
+    });
+    
+    }; 
+}
+    
+function showThemes (){
+    mainContent.innerHTML += 
+    `<div class="showthemes-container">
+    <h2>Themes of the Show</h2>
+    <div class="showthemes-card-container"></div>
+    </div>`
+    const themesCardContainer = document.querySelector(".showthemes-card-container");
+    data.showThemes.forEach(item =>{
+        themesCardContainer.innerHTML += 
+        `<div class="theme-card">
+            <h3>${item.theme}</h3>
+            <div class="theme-image"></div>
+            <p>${item.details}</p>
+    
+        </div>`
+    });
+    themeImage();
+}
+showThemes();
+const imageDiv = document.querySelector(".theme-image");
+
+
