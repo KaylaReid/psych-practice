@@ -92,9 +92,8 @@ function addRandomGusName() {
     let max = Math.floor(136);
     let index = Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
     gusCard.innerHTML +=
-    `<p>${data.gusNames[index]}</p>
-    <button class="gus-button">Get Another Name!</button>`
-
+        `<p class="gus-names">${data.gusNames[index]}</p>
+        <button class="gus-button">Get Another Name!</button>`
 }
 // this function makes and prints the button 
 function addGusNames(){
@@ -136,36 +135,24 @@ function addEps(){
 }
 addEps();
 
-function themeImage (){
-    const imageDiv = document.querySelector(".theme-image");
-    for (let i = 0; i < data.showThemes.length; i++) {
-         data.showThemes[i].images.forEach(item =>{
-            imageDiv.innerHTML +=
-            `<img src="${item}">`
-    });
-    
-    }; 
-}
-    
-function showThemes (){
+function showThemes(){
     mainContent.innerHTML += 
-    `<div class="showthemes-container">
-    <h2>Themes of the Show</h2>
-    <div class="showthemes-card-container"></div>
-    </div>`
+        `<div class="showthemes-container">
+            <h2>Themes of the Show</h2>
+            <div class="showthemes-card-container"></div>
+        </div>`
     const themesCardContainer = document.querySelector(".showthemes-card-container");
     data.showThemes.forEach(item =>{
         themesCardContainer.innerHTML += 
-        `<div class="theme-card">
-            <h3>${item.theme}</h3>
-            <div class="theme-image"></div>
-            <p>${item.details}</p>
-    
-        </div>`
+            `<div class="theme-card">
+                <h3>${item.theme}</h3>
+                <div class="theme-image-${item.theme.replace(" ", "").replace("'", "")}">
+                    <img src="${item.images[0]}" alt"${item.theme}${1}">
+                    <img src="${item.images[1]}" alt"${item.theme}${2}">
+                    <img src="${item.images[2]}" alt"${item.theme}${3}">
+                </div>
+                <p>${item.details}</p>
+            </div>`;
     });
-    themeImage();
 }
 showThemes();
-const imageDiv = document.querySelector(".theme-image");
-
-

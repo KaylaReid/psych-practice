@@ -1,7 +1,7 @@
-/* h2,
+h2,
 h1 {
     text-align: center;
-} */
+}
 .char-card-container {
     display: flex;
     flex-wrap: wrap;
@@ -24,7 +24,12 @@ h1 {
     padding: .5em;
     background-color: lightcoral;
 }
-/* .gus-button {
+.gus-button {
     display: block;
+    justify-content: center;
     margin: auto;
-} */
+}
+.gus-names {
+    display: flex;
+    justify-content: center;
+}
