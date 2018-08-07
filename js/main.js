@@ -147,9 +147,9 @@ function showThemes(){
             `<div class="theme-card">
                 <h3>${item.theme}</h3>
                 <div class="theme-image-${item.theme.replace(" ", "").replace("'", "")}">
-                    <img src="${item.images[0]}" alt"${item.theme}${1}">
-                    <img src="${item.images[1]}" alt"${item.theme}${2}">
-                    <img src="${item.images[2]}" alt"${item.theme}${3}">
+                    <img src="${item.images[0]}" alt"${item.theme}${1}" class="${item.theme.replace(" ", "").replace("'", "")}1">
+                    <img src="${item.images[1]}" alt"${item.theme}${2}" class="${item.theme.replace(" ", "").replace("'", "")}2">
+                    <img src="${item.images[2]}" alt"${item.theme}${3}" class="${item.theme.replace(" ", "").replace("'", "")}3">
                 </div>
                 <p>${item.details}</p>
             </div>`;
